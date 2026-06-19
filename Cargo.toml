@@ -1,6 +1,35 @@
 [package]
 name = "libome-rs"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
+rust-version = "1.85"
+description = "Rust bindings for libome, a C++ library for massive QCD operator matrix elements in x-space."
+readme = "README.md"
+repository = "https://github.com/t7phy/libome_rs"
+license = "GPL-3.0-or-later"
+keywords = ["qcd", "pdf", "ome", "bindings"]
+categories = ["science", "external-ffi-bindings"]
+include = [
+    "Cargo.toml",
+    "Cargo.lock",
+    "build.rs",
+    "README.md",
+    "LICENSE",
+    "CITATION",
+    "CITATION.bib",
+    "UPSTREAM.md",
+    "src/**",
+    "tests/**",
+    "native/libome/src/**",
+    "native/libome/LICENSE",
+]
+
+[features]
+mellin = []
+
+[build-dependencies]
+cc = "1"
+pkg-config = "0.3"
 
 [dependencies]
+paste = "1"
