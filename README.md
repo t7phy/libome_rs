@@ -70,25 +70,49 @@ src/gsl_shim.cpp     C++ shim bridging template-based Mellin API to C ABI
 
 ### From crates.io
 
+As a library:
+
     [dependencies]
     libome-rs = "0.0.1"
+
+As a CLI binary:
+
+```sh
+cargo install libome-rs
+```
 
 With Mellin moment support:
 
     [dependencies]
     libome-rs = { version = "0.0.1", features = ["mellin"] }
 
+```sh
+cargo install libome-rs --features mellin
+```
+
 The `mellin` feature requires system GSL, for example `libgsl-dev` on Debian/Ubuntu or `gsl` via Homebrew on macOS.
 
 ### From GitHub during development
 
+As a library:
+
     [dependencies]
-    libome-rs = { git = "https://github.com/t7phy/libome_rs" }
+    libome-rs = { git = "https://github.com/t7phy/libome_rs", locked = true }
+
+As a CLI binary:
+
+```sh
+cargo install --locked --git https://github.com/t7phy/libome_rs
+```
 
 With Mellin support:
 
     [dependencies]
-    libome-rs = { git = "https://github.com/t7phy/libome_rs", features = ["mellin"] }
+    libome-rs = { git = "https://github.com/t7phy/libome_rs", locked = true, features = ["mellin"] }
+
+```sh
+cargo install --locked --git https://github.com/t7phy/libome_rs --features mellin
+```
 
 ## CLI usage
 
